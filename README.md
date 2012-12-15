@@ -1,4 +1,43 @@
-scan-folders
-============
 
-Python Technical Test
+##Python Technical Test - Scan local folders
+__Using Python, Flask, Celery and SQlite3__
+
+    Using Python, Celery, Flask, and SQLite - could you please create a small web application, which 
+    will scan the local folders and get information about the files, size, age, etc. 
+    Can you then save it to the database and create 2 API endpoints:
+      - list of all files
+      - information about single file.
+    result should be displayed in JSON format
+
+
+###How to setup?
+    sudo apt-get install python-flask python-pysqlite2 python-celery python-sqlalchemy rabbitmq-server
+    NOTE using python-celery 2.4 (stable on ubuntu packaging)
+
+##API DOCUMENTATION
+
+###End points:
+    /api/v1/files Return the list of all files and subfolders
+    /api/v1/file   Returns file information
+        Filter option: path
+        How to use: /api/v1/file?path=/tmp/test/a.bng
+
+###Api response:
+    result_code: integer, like HTTP response codes
+    result: response payload
+    erros: list of errors
+    
+<pre>
+{
+  "errors": [],
+  "result": {
+    "file_info": {
+      "path": "/tmp/test",
+      "created": 1355571883,
+      "modified": 1355571883,
+      "size": 4096
+    }
+  },
+  "result_code": 200
+}
+</pre>
