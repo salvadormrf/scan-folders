@@ -1,4 +1,3 @@
-
 ##Python Technical Test - Scan local folders
 __Using Python, Flask, Celery and SQlite3__
 
@@ -17,9 +16,10 @@ __Using Python, Flask, Celery and SQlite3__
     
     git clone https://github.com/salvadormrf/scan-folders.git
     cd scan-folders
-    celeryd &
     touch /tmp/test
-    python create_db.py && python main.py
+    python create_db.py 
+    celeryd &
+    python main.py
 
     Go to the following URL http://127.0.0.1:5000/
 
