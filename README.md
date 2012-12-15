@@ -19,7 +19,7 @@ __Using Python, Flask, Celery and SQlite3__
     cd scan-folders
     celeryd &
     touch /tmp/test
-    python create_db.py && main.py
+    python create_db.py && python main.py
 
     Go to the following URL http://127.0.0.1:5000/
 
