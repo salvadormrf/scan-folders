@@ -18,7 +18,7 @@ __Using Python, Flask, Celery and SQlite3__
     cd scan-folders
     touch /tmp/test
     python create_db.py 
-    celeryd &
+    celeryd --loglevel=INFO --include=tasks &
     python main.py
 
     Go to the following URL http://127.0.0.1:5000/
