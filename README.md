@@ -11,8 +11,17 @@ __Using Python, Flask, Celery and SQlite3__
 
 
 ###How to setup?
-    sudo apt-get install python-flask python-pysqlite2 python-celery python-sqlalchemy rabbitmq-server
     NOTE using python-celery 2.4 (stable on ubuntu packaging)
+
+    sudo apt-get install python-flask python-pysqlite2 python-celery python-sqlalchemy rabbitmq-server
+    
+    git clone https://github.com/salvadormrf/scan-folders.git
+    cd scan-folders
+    celeryd &
+    touch /tmp/test
+    python create_db.py && main.py
+
+    Go to the following URL http://127.0.0.1:5000/
 
 ##API DOCUMENTATION
 
